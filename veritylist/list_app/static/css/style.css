@@ -1,0 +1,25 @@
+body {
+    background-color: darkgrey;
+}
+
+#cart-btn {
+    width: 80vw;
+    height: 10vh;
+    border-radius: 20px;
+    font-size: 35px; 
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+.obj {
+    margin: 2vh;
+    border: solid 3px black;
+    padding-left: 2vw;
+}
+
+.about-obj {
+    padding-left: 3vw;
+}

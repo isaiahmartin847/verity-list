@@ -8,12 +8,13 @@
         <title>Verity List</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-        <script defer src="{% static 'js/script.js' %}"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}"> 
+        <script defer src="{% static 'js/main.js' %}"></script>
     </head>
     <body>
-        <nav>
-            <button id="cart-btn">Cart</button>
-        </nav>
+
+        {% block body %}
+        {% endblock %}
+
     </body>
 </html>
