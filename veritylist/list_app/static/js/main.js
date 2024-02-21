@@ -28,9 +28,15 @@ objects.forEach((item) => {
         <h3>${item.name}</h3>
         <div">
             <p>${item.description}</p>
-            <button type="button">More</button>
-            <button>Add to cart</button>
+            <button value="${item.url}"type="button">More</button>
+            <button value="${item.id}">Add to cart</button>
         </div>
     </div>
     `
 })
+
+
+
+const logBtnValue = (btnVal) => {
+    console.log(btnVal.value)
+}
