@@ -109,6 +109,7 @@ const objects = [
 
 ]
 
+let listItems = []
 
 objects.forEach((item) => {
     tomatoContainer.innerHTML += `
@@ -117,14 +118,14 @@ objects.forEach((item) => {
         <div">
             <p>${item.description}</p>
             <button value="${item.url}"type="button">More</button>
-            <button value="${item.id}">Add to cart</button>
+            <button id="T-${item.id}" onclick="btnClick('T-${item.id}')">Add to list</button>
         </div>
     </div>
     `
 })
 
 
-
-const logBtnValue = (btnVal) => {
-    console.log(btnVal.value)
+const btnClick = (id) => {
+    console.log(id)
 }
+
