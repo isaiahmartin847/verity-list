@@ -22,6 +22,13 @@ const objects = [
 
 objects.forEach((item) => {
     tomatoContainer.innerHTML += `
-    <h2>${item.name}</h2>
+    <div class="text-container">
+        <h3 class="plant-title">${item.name}</h3>
+        <div class="about-obj">
+            <p class="description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut maxime consequatur dolorem iste, aliquid hic itaque nisi! Atque inventore nisi distinctio enim aliquid ipsam corporis repellat deleniti aperiam, sit voluptas.</p>
+            <button type="button">More</button>
+            <button id="add-to-cart-btn">Add to cart</button>
+        </div>
+    </div>
     `
 })
