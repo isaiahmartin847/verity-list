@@ -1,8 +1,12 @@
 const tomatoContainer = document.getElementById("tomato-container")
+const listBtn = document.getElementById("list-btn")
 
-console.log("hello")
 
 const tomatoPrice = 3.50
+
+
+
+
 
 const objects = [
     {
@@ -117,15 +121,25 @@ objects.forEach((item) => {
         <h3>name:${item.title}</h3>
         <div">
             <p>${item.description}</p>
-            <button value="${item.url}"type="button">More</button>
-            <button id="T-${item.id}" onclick="btnClick('T-${item.id}')">Add to list</button>
+            <button id="T-${item.id}" onclick="addToList('T-${item.id}')">Add to list</button>
+            <button onclick="" type="button">More</button>
         </div>
     </div>
     `
 })
 
 
-const btnClick = (id) => {
-    console.log(id)
+const addToList = (id) => {
+    listItems.push(id)
+    if (listItems.length > 5){
+        console.log(listItems)
+    }
 }
 
+
+const goToList = () => {
+    console.log(listItems)
+}
+
+
+listBtn.addEventListener("click", goToList)
