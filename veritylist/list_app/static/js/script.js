@@ -5,27 +5,33 @@ console.log("hello")
 
 const objects = [
     {
-        name: "new Girl",
-        description: "the New Girl is a steak tomato",
+        title: "new Girl",
+        size: "4-6oz",
+        potColor: "NA",
+        daysToMaturity: 62,
+        description: "slicing tomato",
         price: 3.50,
         id: 1,
-        url: "new Girl URL"
+        url: "https://www.johnnyseeds.com/vegetables/tomatoes/slicing-tomatoes/new-girl-organic-f1-tomato-seed-2412G.html"
     }, 
     {
-        name: "Early Girl",
+        title: "Early Girl",
+        size: "NA",
+        potColor: "black",
+        daysToMaturity: 60,
         description: "the early girl is a steack tomato",
         price: 3.50,
         id: 2,
-        url: "Early girl",
-
+        url: "https://www.tomatodirt.com/early-girl-tomato.html",
     }
+
 ]
 
 
 objects.forEach((item) => {
     tomatoContainer.innerHTML += `
     <div>
-        <h3>${item.name}</h3>
+        <h3>name:${item.title}</h3>
         <div">
             <p>${item.description}</p>
             <button value="${item.url}"type="button">More</button>
