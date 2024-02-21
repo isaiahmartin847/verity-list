@@ -14,29 +14,9 @@ nav {
     justify-content: center;
 }
 
-.obj {
-    border: solid 3px black;
+
+.plant-class{
     display: flex;
-    justify-content: center;
-    margin-top: 30px;
+    flex-direction: column;
 }
 
-.about-obj {
-    padding-left: 3vw;
-}
-
-
-#button-container{
-    border: solid 3px red;
-    width: 100px;
-    align-items: flex-end;
-}
-
-.text-container {
-    border: solid 3px red;
-}
-
-#add-to-cart-btn {
-    width: 100%;
-    height: 100%;
-}
