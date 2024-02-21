@@ -2,6 +2,7 @@ const tomatoContainer = document.getElementById("tomato-container")
 
 console.log("hello")
 
+const tomatoPrice = 3.50
 
 const objects = [
     {
@@ -10,7 +11,7 @@ const objects = [
         potColor: "NA",
         daysToMaturity: 62,
         description: "slicing tomato",
-        price: 3.50,
+        price: tomatoPrice,
         id: 1,
         url: "https://www.johnnyseeds.com/vegetables/tomatoes/slicing-tomatoes/new-girl-organic-f1-tomato-seed-2412G.html"
     }, 
@@ -20,7 +21,7 @@ const objects = [
         potColor: "black",
         daysToMaturity: 60,
         description: "slicing tomato",
-        price: 3.50,
+        price: tomatoPrice,
         id: 2,
         url: "https://www.tomatodirt.com/early-girl-tomato.html",
     },
@@ -30,7 +31,7 @@ const objects = [
         potColor: "Baby Blue",
         daysToMaturity: 65,
         description: "slicing tomato",
-        price: 3.50,
+        price: tomatoPrice,
         id: 3,
         url: "https://www.fedcoseeds.com/seeds/cosmonaut-volkov-organic-slicing-tomato-4038"
     },
@@ -40,7 +41,7 @@ const objects = [
         potColor: "NA",
         daysToMaturity: 72,
         description: "slicing tomato",
-        price: 3.50,
+        price: tomatoPrice,
         id: 4,
         url: "https://www.johnnyseeds.com/vegetables/tomatoes/heirloom-tomatoes/prudens-purple-organic-tomato-seed-712.html"
     },
@@ -50,9 +51,59 @@ const objects = [
         potColor: "Pale Green Pots",
         daysToMaturity: 65,
         description: "slicing tomato",
-        price: 3.50,
+        price: tomatoPrice,
         id: 5,
         url: "https://territorialseed.com/products/tomato-bobcat" 
+    }, 
+    {
+        title: "Green Zebra",
+        size: "4-5",
+        potColor: "Green",
+        daysToMaturity: 77,
+        description: "slicing tomato",
+        price: tomatoPrice,
+        id: 5,
+        url: "https://fedcoseeds.com/seeds/green-zebra-organic-slicing-tomato-4057"
+    },
+    {
+        title: "Moskvich",
+        size: "4-6",
+        potColor: "NA",
+        daysToMaturity: 60,
+        description: "slicing tomato",
+        price: tomatoPrice,
+        id: 6,
+        url: "https://www.johnnyseeds.com/vegetables/tomatoes/heirloom-tomatoes/moskvich-organic-tomato-seed-756.html"
+    },
+    {
+        title: "Pink Berkeley Tie-Dye",
+        size: "8-9",
+        potColor: "Red solo square",
+        daysToMaturity: 68,
+        description: "slicing tomato",
+        price: tomatoPrice,
+        id: 7,
+        url: "https://www.fedcoseeds.com/seeds/pink-berkeley-tie-dye-organic-slicing-tomato-4041"
+    },
+    {
+        title: "Black Krim",
+        size: "12-18",
+        potColor: "Teal",
+        daysToMaturity: 80,
+        description: "slicing tomato",
+        price: tomatoPrice,
+        id: 8,
+        url: "https://fedcoseeds.com/seeds/black-krim-organic-slicing-tomato-4061"
+    },
+    {
+        title: "Premio",
+        size: "3-4",
+        potColor: "Yellow",
+        daysToMaturity: 60,
+        description: "slicing tomato",
+        price: tomatoPrice,
+        id: 9,
+        url: "https://www.fedcoseeds.com/seeds/premio-slicing-tomato-4211"
     }
 
 
