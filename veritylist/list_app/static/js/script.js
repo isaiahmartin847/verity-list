@@ -1,5 +1,7 @@
 const tomatoContainer = document.getElementById("tomato-container")
+const listItemContainer = document.getElementById("list-container")
 const listBtn = document.getElementById("list-btn")
+
 
 
 const tomatoPrice = 3.50
@@ -138,7 +140,13 @@ const addToList = (id) => {
 
 
 const goToList = () => {
-    console.log(listItems)
+    tomatoContainer.classList.toggle("hidden");
+    listItemContainer.classList.toggle("hidden")
+    if (listBtn.textContent === "Go to list"){
+        listBtn.innerText = "Go to plant index"
+    } else {
+        listBtn.innerText = "Go to list"
+    }
 }
 
 const goToMore = (url) => {
