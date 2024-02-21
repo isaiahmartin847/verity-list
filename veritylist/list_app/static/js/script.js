@@ -122,7 +122,7 @@ objects.forEach((item) => {
         <div">
             <p>${item.description}</p>
             <button id="T-${item.id}" onclick="addToList('T-${item.id}')">Add to list</button>
-            <button onclick="" type="button">More</button>
+            <button onclick="goToMore('${item.url}')" type="button">More</button>
         </div>
     </div>
     `
@@ -141,5 +141,9 @@ const goToList = () => {
     console.log(listItems)
 }
 
+const goToMore = (url) => {
+    console.log(url)
+    window.open(url)
+}
 
 listBtn.addEventListener("click", goToList)
