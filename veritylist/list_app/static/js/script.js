@@ -138,12 +138,25 @@ const addToList = (id) => {
     }
 }
 
+const countList = () => {
+    const itemCount = {}
+    listItems.forEach((x) => {
+    itemCount[x] = (itemCount[x] || 0) + 1
+    })
+    console.log(itemCount)
+    return itemCount
+}
+
+
 
 const goToList = () => {
     tomatoContainer.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
+
+
     if (listBtn.textContent === "Go to list"){
         listBtn.innerText = "Go to plant index"
+        countList();
     } else {
         listBtn.innerText = "Go to list"
     }
