@@ -123,7 +123,7 @@ objects.forEach((item) => {
         <h3>name:${item.title}</h3>
         <div">
             <p>${item.description}</p>
-            <button id="T-${item.id}" onclick="addToList('T-${item.id}')">Add to list</button>
+            <button id="T-${item.id}" onclick="addToList('${item.title}')">Add to list</button>
             <button onclick="goToMore('${item.url}')" type="button">More</button>
         </div>
     </div>
@@ -147,7 +147,11 @@ const countList = () => {
     return itemCount
 }
 
-
+const displayListOfItems = () => {
+    //TODO
+    //write a function that displays all the things that the user has put into their list 
+    
+}
 
 const goToList = () => {
     tomatoContainer.classList.toggle("hidden");
@@ -156,7 +160,7 @@ const goToList = () => {
 
     if (listBtn.textContent === "Go to list"){
         listBtn.innerText = "Go to plant index"
-        countList();
+        // displayListOfItems()
     } else {
         listBtn.innerText = "Go to list"
     }
