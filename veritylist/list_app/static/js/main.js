@@ -4,6 +4,7 @@ const listBtn = document.getElementById("list-btn")
 
 
 
+
 const tomatoPrice = 3.50
 
 
@@ -148,9 +149,19 @@ const countList = () => {
 }
 
 const displayListOfItems = () => {
-    //TODO
-    //write a function that displays all the things that the user has put into their list 
-    
+    obj = countList()
+    listItemContainer.innerHTML = '';
+
+    Object.entries(obj).forEach(([key, value]) => {
+        listItemContainer.innerHTML += `
+            <div>
+                <h2 class="list-name">Name: ${key}</h2>
+                <h2 class="list-count">Count: ${value}</h2>
+            </div>
+        `
+
+    })
+
 }
 
 const goToList = () => {
@@ -160,14 +171,13 @@ const goToList = () => {
 
     if (listBtn.textContent === "Go to list"){
         listBtn.innerText = "Go to plant index"
-        // displayListOfItems()
+        displayListOfItems()
     } else {
         listBtn.innerText = "Go to list"
     }
 }
 
 const goToMore = (url) => {
-    console.log(url)
     window.open(url)
 }
 
