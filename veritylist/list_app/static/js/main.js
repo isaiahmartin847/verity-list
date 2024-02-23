@@ -148,6 +148,7 @@ const countList = () => {
     return itemCount
 }
 
+
 const displayListOfItems = () => {
     obj = countList()
     listItemContainer.innerHTML = '';
@@ -157,6 +158,7 @@ const displayListOfItems = () => {
             <div>
                 <h2 class="list-name">Name: ${key}</h2>
                 <h2 class="list-count">Count: ${value}</h2>
+                <button id="list-remove-btn" onclick="removeAll('${key}')">remove all</button>
             </div>
         `
 
@@ -179,6 +181,10 @@ const goToList = () => {
 
 const goToMore = (url) => {
     window.open(url)
+}
+const removeAll = (key) => {
+    listItems = listItems.filter(item => item !== key)
+    displayListOfItems()
 }
 
 listBtn.addEventListener("click", goToList)
