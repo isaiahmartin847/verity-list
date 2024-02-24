@@ -1,7 +1,7 @@
 const tomatoContainer = document.getElementById("tomato-container")
 const listItemContainer = document.getElementById("list-container")
 const listBtn = document.getElementById("list-btn")
-
+const total = document.getElementById("tital")
 
 
 
@@ -160,10 +160,10 @@ const displayListOfItems = () => {
 
     Object.entries(obj).forEach(([key, value]) => {
         listItemContainer.innerHTML += `
-            <div>
+            <div class="item-div">
                 <h2 class="list-name">Name: ${key}</h2>
-                <h2 class="list-count">Count: ${value}</h2>
-                <button id="list-remove-btn" onclick="removeAll('${key}')">remove all</button>
+                <h3 class="list-count">Count: ${value}</h3>
+                <button class="list-remove-btn" onclick="removeAll('${key}')">remove all</button>
             </div>
         `
 
@@ -191,5 +191,6 @@ const removeAll = (key) => {
     listItems = listItems.filter(item => item !== key)
     displayListOfItems()
 }
+
 
 listBtn.addEventListener("click", goToList)

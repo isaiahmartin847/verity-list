@@ -9,6 +9,11 @@ body {
     border-radius: 20px;
     font-size: 35px; 
     background-color: #51C337;
+    margin-bottom: 20px;
+}
+
+#list-btn:hover {
+    background-color: #51c337b6;
 }
 
 nav {
@@ -68,3 +73,13 @@ nav {
     background-color: #d3d2d2;
 }
 
+.list-remove-btn {
+    background-color: red;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.list-remove-btn:hover {
+    background-color: #ff0000a4;
+}
