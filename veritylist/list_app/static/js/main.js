@@ -14,7 +14,7 @@ const tomatoPrice = 3.50
 const objects = [
     {
         title: "new Girl",
-        size: "4-6oz",
+        size: "4-6",
         potColor: "NA",
         daysToMaturity: 62,
         description: "slicing tomato",
@@ -121,7 +121,7 @@ let listItems = []
 objects.forEach((item) => {
     tomatoContainer.innerHTML += `
     <div class="item-div">
-        <h3>Name: ${item.title}</h3>
+        <h2>Name: ${item.title}</h2>
         <div">
             <ul>
                 <li>Fruit size: ${item.size}oz</li>
