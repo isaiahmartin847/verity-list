@@ -120,10 +120,15 @@ let listItems = []
 
 objects.forEach((item) => {
     tomatoContainer.innerHTML += `
-    <div>
-        <h3>name:${item.title}</h3>
+    <div class="item-div">
+        <h3>Name: ${item.title}</h3>
         <div">
-            <p>${item.description}</p>
+            <ul>
+                <li>Size: ${item.size}oz</li>
+                <li>Pot Color: ${item.potColor}</li>
+                <li>Days to maturity: ${item.daysToMaturity}</li>
+                <li>Price: ${item.price}</li>
+            </ul>
             <button id="T-${item.id}" onclick="addToList('${item.title}')">Add to list</button>
             <button onclick="goToMore('${item.url}')" type="button">More</button>
         </div>

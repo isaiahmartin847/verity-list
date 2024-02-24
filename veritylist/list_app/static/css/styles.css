@@ -1,5 +1,5 @@
 body {
-    background-color: darkgrey;
+    background-color: white;
     
 }
 
@@ -23,4 +23,8 @@ nav {
 
 .hidden {
     display: none;
+}
+
+.item-div {
+    border: solid 2px black;
 }
