@@ -8,6 +8,7 @@ body {
     height: 10vh;
     border-radius: 20px;
     font-size: 35px; 
+    background-color: #51C337;
 }
 
 nav {
@@ -26,5 +27,20 @@ nav {
 }
 
 .item-div {
-    border: solid 2px black;
+    /* border-bottom: solid 2px black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    margin-bottom: 10px;
+    padding: 20px;
+    border-bottom: solid 3px black;
 }
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
