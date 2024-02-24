@@ -124,13 +124,13 @@ objects.forEach((item) => {
         <h3>Name: ${item.title}</h3>
         <div">
             <ul>
-                <li>Size: ${item.size}oz</li>
+                <li>Fruit size: ${item.size}oz</li>
                 <li>Pot Color: ${item.potColor}</li>
                 <li>Days to maturity: ${item.daysToMaturity}</li>
-                <li>Price: ${item.price}</li>
+                <li>Price: $${item.price}0</li>
             </ul>
-            <button id="T-${item.id}" onclick="addToList('${item.title}')">Add to list</button>
-            <button onclick="goToMore('${item.url}')" type="button">More</button>
+            <button class="add-to-list-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to list</button>
+            <button class="more-btn" onclick="goToMore('${item.url}')" type="button">More</button>
         </div>
     </div>
     `

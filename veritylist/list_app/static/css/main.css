@@ -27,14 +27,14 @@ nav {
 }
 
 .item-div {
-    /* border-bottom: solid 2px black; */
+
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center; 
     margin-bottom: 10px;
     padding: 20px;
-    border-bottom: solid 3px black;
+    border-bottom: solid 2px black;
 }
 
 
@@ -42,5 +42,29 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+    border-bottom: solid 2px black;
+}
+
+.add-to-list-btn {
+    background-color: #FFC300;
+    width: 200px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.add-to-list-btn:hover {
+    background-color: #FFF300;
+}
+
+
+.more-btn {
+    background-color: #BBBBBB;
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.more-btn:hover {
+    background-color: #d3d2d2;
 }
 
