@@ -120,14 +120,25 @@ const smallFuritedTomatoes = [
 
 ]
 
-const peppers = []
+const peppers = [
+    {
+        title: "New Ace F1",
+        size: "NA",
+        potColor: "green",
+        daysToMaturity: 65,
+        description: "NA",
+        price: tomatoPrice,
+        id: 10,
+        url: "https://www.harrisseeds.com/products/01648-pepper-new-ace-f1?variant=35441433051208"
+    }
+]
 
 const strawberry = [
 
 ]
 
 const otherGardenPlants = [
-    
+
 ]
 
 
