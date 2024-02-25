@@ -155,7 +155,7 @@ objects.forEach((item) => {
                 <li>Days to maturity: ${item.daysToMaturity}</li>
                 <li>Price: $${item.price}0</li>
             </ul>
-            <button class="add-to-list-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to list</button>
+            <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
             <button class="more-btn" onclick="goToMore('${item.url}')" type="button">More</button>
         </div>
     </div>
