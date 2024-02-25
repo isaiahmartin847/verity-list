@@ -10,7 +10,7 @@ const tomatoPrice = 3.50
 
 
 
-
+// rename this to the slicing tomatos
 const objects = [
     {
         title: "new Girl",
@@ -115,6 +115,21 @@ const objects = [
 
 
 ]
+
+const smallFuritedTomatoes = [
+
+]
+
+const peppers = []
+
+const strawberry = [
+
+]
+
+const otherGardenPlants = [
+    
+]
+
 
 let listItems = []
 
