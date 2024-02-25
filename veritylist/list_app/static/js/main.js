@@ -150,13 +150,13 @@ objects.forEach((item) => {
         <h2>Name: ${item.title}</h2>
         <div">
             <ul>
-                <li>Fruit size: ${item.size}oz</li>
-                <li>Pot Color: ${item.potColor}</li>
-                <li>Days to maturity: ${item.daysToMaturity}</li>
-                <li>Price: $${item.price}0</li>
+                <li class="list-items">Fruit size: ${item.size}oz</li>
+                <li class="list-items">Pot Color: ${item.potColor}</li>
+                <li class="list-items">Days to maturity: ${item.daysToMaturity}</li>
+                <li class="list-items">Price: $${item.price}0</li>
             </ul>
             <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
-            <button class="more-btn" onclick="goToMore('${item.url}')" type="button">More</button>
+            <button class="about-btn" onclick="goToAbout('${item.url}')" type="button">About</button>
         </div>
     </div>
     `
@@ -182,8 +182,9 @@ const countList = () => {
 
 const displayListOfItems = () => {
     obj = countList()
-    listItemContainer.innerHTML = '';
-
+    listItemContainer.innerHTML = `
+    <h1 class="title">Items in cart</h1>
+    `;
     Object.entries(obj).forEach(([key, value]) => {
         listItemContainer.innerHTML += `
             <div class="item-div">
@@ -202,15 +203,15 @@ const goToList = () => {
     listItemContainer.classList.toggle("hidden")
 
 
-    if (listBtn.textContent === "Go to list"){
+    if (listBtn.textContent === "Go to cart"){
         listBtn.innerText = "Go to plant index"
         displayListOfItems()
     } else {
-        listBtn.innerText = "Go to list"
+        listBtn.innerText = "Go to cart"
     }
 }
 
-const goToMore = (url) => {
+const goToAbout = (url) => {
     window.open(url)
 }
 const removeAll = (key) => {
