@@ -1,6 +1,7 @@
 const largTomatoContainer = document.getElementById("larg-tomato-container")
 const smallTomatoContainer = document.getElementById("small-tomatoes")
 const peppersContainer = document.getElementById("peppers")
+const indexDiv = document.getElementById("index-div")
 const listItemContainer = document.getElementById("list-container")
 const listBtn = document.getElementById("list-btn")
 const total = document.getElementById("tital")
@@ -440,7 +441,7 @@ const displayCart = () => {
 
 // you may need to wrap all the index things in one div to toggle them 
 const goToList = () => {
-    tomatoContainer.classList.toggle("hidden");
+    indexDiv.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
 
 
