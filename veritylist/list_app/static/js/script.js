@@ -1,4 +1,6 @@
-const tomatoContainer = document.getElementById("tomato-container")
+const largTomatoContainer = document.getElementById("larg-tomato-container")
+const smallTomatoContainer = document.getElementById("small-tomatoes")
+const peppersContainer = document.getElementById("peppers")
 const listItemContainer = document.getElementById("list-container")
 const listBtn = document.getElementById("list-btn")
 const total = document.getElementById("tital")
@@ -11,7 +13,7 @@ const largePlantsPrice = 3.50
 
 
 // rename this to the slicing tomatos
-const objects = [
+const largTomatoesObj = [
     {
         title: "new Girl",
         size: "4-6",
@@ -116,7 +118,7 @@ const objects = [
 
 ]
 
-const smallFuritedTomatoes = [
+const smallTomatoesObj = [
     {
         title: "Large Red Cherry",
         size: "NA",
@@ -220,7 +222,7 @@ const smallFuritedTomatoes = [
 
 ]
 
-const peppers = [
+const peppersObj = [
     {
         title: "New Ace F1",
         size: "NA",
@@ -375,27 +377,27 @@ const otherGardenPlants = [
 
 let listItems = []
 
-objects.forEach((item) => {
-    tomatoContainer.innerHTML += `
-    <div class="item-div">
-        <h2>Name: ${item.title}</h2>
-        <div">
-            <ul>
-                <li class="list-items">Fruit size: ${item.size}oz</li>
-                <li class="list-items">Pot Color: ${item.potColor}</li>
-                <li class="list-items">Days to maturity: ${item.daysToMaturity}</li>
-                <li class="list-items">Price: $${item.price}0</li>
-            </ul>
-            <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
-            <button class="about-btn" onclick="goToAbout('${item.url}')" type="button">About</button>
+
+
+
+listIndex = (obj, containerName) => {
+    obj.forEach((item) => {
+        containerName.innerHTML += `
+        <div class="item-div">
+            <h2>Name: ${item.title}</h2>
+            <div">
+                <ul>
+                    <li class="list-items">Fruit size: ${item.size}oz</li>
+                    <li class="list-items">Pot Color: ${item.potColor}</li>
+                    <li class="list-items">Days to maturity: ${item.daysToMaturity}</li>
+                    <li class="list-items">Price: $${item.price}0</li>
+                </ul>
+                <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
+                <button class="about-btn" onclick="goToAbout('${item.url}')" type="button">About</button>
+            </div>
         </div>
-    </div>
-    `
-})
-
-
-listIndex = (obj) => {
-    
+        `
+    })
 } 
 
 
@@ -418,7 +420,7 @@ const countList = () => {
 }
 
 
-const displayListOfItems = () => {
+const displayCart = () => {
     obj = countList()
     listItemContainer.innerHTML = `
     <h1 class="title">Items in cart</h1>
@@ -436,6 +438,7 @@ const displayListOfItems = () => {
 
 }
 
+// you may need to wrap all the index things in one div to toggle them 
 const goToList = () => {
     tomatoContainer.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
@@ -443,7 +446,7 @@ const goToList = () => {
 
     if (listBtn.textContent === "Go to cart"){
         listBtn.innerText = "Go to plant index"
-        displayListOfItems()
+        displayCart()
     } else {
         listBtn.innerText = "Go to cart"
     }
@@ -454,8 +457,15 @@ const goToAbout = (url) => {
 }
 const removeAll = (key) => {
     listItems = listItems.filter(item => item !== key)
-    displayListOfItems()
+    displayCart()
 }
 
-
+const main = () => {
+    listIndex(largTomatoesObj, largTomatoContainer)
+    listIndex(smallTomatoesObj, smallTomatoContainer)
+    listIndex(peppersObj, peppersContainer)
+}
 listBtn.addEventListener("click", goToList)
+
+main()
+

@@ -1,4 +1,6 @@
-
+body {
+    background-color: #51C337;
+}
 
 #list-btn {
     width: 80vw;
@@ -43,7 +45,8 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: solid 2px black;
+    border-bottom: solid 4px blue;
+    padding: 10px;
 }
 
 .add-to-cart-btn {
