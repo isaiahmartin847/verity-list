@@ -394,6 +394,13 @@ objects.forEach((item) => {
 })
 
 
+listIndex = (obj) => {
+    
+} 
+
+
+
+
 const addToList = (id) => {
     listItems.push(id)
     if (listItems.length > 5){
