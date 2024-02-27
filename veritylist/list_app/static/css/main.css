@@ -43,12 +43,12 @@ nav {
 
 
 .title {
+    color: #359aff;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: solid 4px black;
+    border-bottom: solid 4px #FFC300;
     padding: 10px;
-    text-decoration: underline;
 }
 
 .add-to-cart-btn {

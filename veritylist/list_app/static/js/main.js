@@ -367,9 +367,7 @@ const peppersObj = [
 
 ]
 
-const strawberry = [
 
-]
 
 const otherGardenPlants = [
 
@@ -390,7 +388,7 @@ listIndex = (obj, containerName) => {
                 <ul>
                     <li class="list-items">Fruit size: ${item.size}oz</li>
                     <li class="list-items">Pot Color: ${item.potColor}</li>
-                    <li class="list-items">Days to maturity: ${item.daysToMaturity}</li>
+                    <li class="list-items">Days to maturity: ${item.daysToMaturity} days</li>
                     <li class="list-items">Price: $${item.price}0</li>
                 </ul>
                 <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
@@ -406,9 +404,6 @@ listIndex = (obj, containerName) => {
 
 const addToList = (id) => {
     listItems.push(id)
-    if (listItems.length > 5){
-        console.log(listItems)
-    }
 }
 
 const countList = () => {
@@ -424,7 +419,7 @@ const countList = () => {
 const displayCart = () => {
     obj = countList()
     listItemContainer.innerHTML = `
-    <h1 class="title">Items in cart</h1>
+    <h1 class="title top-title">Items in cart</h1>
     `;
     Object.entries(obj).forEach(([key, value]) => {
         listItemContainer.innerHTML += `
