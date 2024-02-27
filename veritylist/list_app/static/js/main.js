@@ -9,7 +9,7 @@ const total = document.getElementById("tital")
 
 
 const largePlantsPrice = 3.50
-
+let cartItems = []
 
 
 
@@ -374,8 +374,6 @@ const otherGardenPlants = [
 ]
 
 
-let listItems = []
-
 
 
 
@@ -403,12 +401,12 @@ listIndex = (obj, containerName) => {
 
 
 const addToList = (id) => {
-    listItems.push(id)
+    cartItems.push(id)
 }
 
 const countList = () => {
     const itemCount = {}
-    listItems.forEach((x) => {
+    cartItems.forEach((x) => {
     itemCount[x] = (itemCount[x] || 0) + 1
     })
     console.log(itemCount)
@@ -438,6 +436,8 @@ const displayCart = () => {
 const goToList = () => {
     indexDiv.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
+    const jsonList = JSON.stringify(cartItems)
+    localStorage.setItem("carted-items", jsonList)
 
 
     if (listBtn.textContent === "Go to cart"){
@@ -452,7 +452,7 @@ const goToAbout = (url) => {
     window.open(url)
 }
 const removeAll = (key) => {
-    listItems = listItems.filter(item => item !== key)
+    cartItems = cartItems.filter(item => item !== key)
     displayCart()
 }
 
@@ -461,6 +461,9 @@ const main = () => {
     listIndex(smallTomatoesObj, smallTomatoContainer)
     listIndex(peppersObj, peppersContainer)
 }
+
+
+
 listBtn.addEventListener("click", goToList)
 
 main()
