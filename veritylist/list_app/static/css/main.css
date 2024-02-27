@@ -5,17 +5,20 @@
     height: 10vh;
     border-radius: 20px;
     font-size: 35px; 
-    background-color: #51C337;
-    /* margin-bottom: 20px; */
+    background-color: #359aff;
+    position: fixed;
+    margin-top: 100px;
+
 }
 
 #list-btn:hover {
-    background-color: #51c337b6;
+    background-color: #359affa4;
 }
 
 nav {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 
@@ -91,4 +94,8 @@ nav {
 .list-items {
     font-size: 22px;
     list-style-type: none;
+}
+
+.top-title{
+    margin-top: 100px;
 }
