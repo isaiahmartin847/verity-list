@@ -8,7 +8,7 @@ const total = document.getElementById("tital")
 
 
 const largePlantsPrice = 3.50
-let cartItems = ["hello"]
+let cartItems = ["hello", "world"]
 
 
 const saveAndUpdateCart = () => {
@@ -21,8 +21,10 @@ const saveAndUpdateCart = () => {
     } else {
         const cart = localStorage.getItem("cart")
         const cartArr = JSON.parse(cart)
-        cartArr.push("world")
+        // cartArr.push("world")
+        cartItems.forEach(item => cartArr.push(item))
         localStorage.setItem("cart", cartArr)
+        cartItems = []
     }
     
 }
@@ -481,4 +483,4 @@ const main = () => {
 listBtn.addEventListener("click", goToCart)
 
 main()
-
+console.log(cartItems)
