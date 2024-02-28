@@ -8,40 +8,23 @@ const total = document.getElementById("tital")
 
 
 const largePlantsPrice = 3.50
-let cartItems = []
+let cartItems = ["hello"]
 
 
-const updateData = () => {
-    const y = localStorage.getItem("cartedItems")
-    const cartArr = JSON.parse(y)
-    console.log(cartItems)
-
-    cartArr.push("hello")
-    const updatedCart = JSON.stringify(cartArr)
-    localStorage.setItem("cartedItems", cartArr)
-
-}
-
-const getCart = () => {
-    if(!localStorage.getItem("cartedItems")){
-        const cartString = JSON.stringify(cartItems)
-        localStorage.setItem("cartedItems", cartString)
-    } else 
-    {
-        updateData()
-        return localStorage.getItem("cartedItems")
+const saveAndUpdateCart = () => {
+    console.log("update cart")
+    if(!localStorage.getItem("cart")){
+        // creating the local storage data 
+        const cartStr = JSON.stringify(cartItems)
+        localStorage.setItem("cart", cartStr)
+        console.log("cart does not exist in our local data so i created one")
+    } else {
+        const cart = localStorage.getItem("cart")
+        const cartArr = JSON.parse(cart)
+        cartArr.push("world")
+        localStorage.setItem("cart", cartArr)
     }
     
-}
-
-
-const saveCart = () => {
-    jsonCart = getCart()
-
-    // const localStorageCart = localStorage.getItem("cartedItems")
-    // const x = JSON.parse(localStorageCart)
-    const x = [];
-    return x
 }
 
 
@@ -436,9 +419,9 @@ const addToList = (id) => {
     cartItems.push(id)
 }
 
-const countList = (array) => {
+const countList = () => {
     const itemCount = {}
-    array.forEach((x) => {
+    cartItems.forEach((x) => {
     itemCount[x] = (itemCount[x] || 0) + 1
     })
     // console.log(itemCount)
@@ -448,8 +431,7 @@ const countList = (array) => {
 
 const displayCart = () => {
     //here save the cart items and pass the value into the countList function
-    const cart = saveCart()
-    obj = countList(cart)
+    obj = countList()
     listItemContainer.innerHTML = `
     <h1 class="title top-title">Items in cart</h1>
     `;
@@ -491,6 +473,7 @@ const main = () => {
     listIndex(largTomatoesObj, largTomatoContainer)
     listIndex(smallTomatoesObj, smallTomatoContainer)
     listIndex(peppersObj, peppersContainer)
+    saveAndUpdateCart()
 }
 
 
