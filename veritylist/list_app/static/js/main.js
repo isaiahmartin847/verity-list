@@ -10,25 +10,41 @@ const total = document.getElementById("tital")
 const largePlantsPrice = 3.50
 let cartItems = []
 
-const isCart = () => {
+
+const updateData = () => {
+    const y = localStorage.getItem("cartedItems")
+    const cartArr = JSON.parse(y)
+    console.log(cartItems)
+
+    cartArr.push("hello")
+    const updatedCart = JSON.stringify(cartArr)
+    localStorage.setItem("cartedItems", cartArr)
+
+}
+
+const getCart = () => {
     if(!localStorage.getItem("cartedItems")){
-        const jsonCart = JSON.stringify(cartItems)
+        const cartString = JSON.stringify(cartItems)
+        localStorage.setItem("cartedItems", cartString)
+    } else 
+    {
+        updateData()
+        return localStorage.getItem("cartedItems")
     }
-    return jsonCart
+    
 }
 
 
 const saveCart = () => {
+    jsonCart = getCart()
 
-    if (localStorage.getItem("carted-items")){
-        // if()
-        console.log(jsonCart)
-    } else {
-        const jsonCart = JSON.stringify(cartItems)
-        localStorage.setItem("carted-items", jsonCart)
-        console.log("made the cart data")
-    }
+    // const localStorageCart = localStorage.getItem("cartedItems")
+    // const x = JSON.parse(localStorageCart)
+    const x = [];
+    return x
 }
+
+
 // rename this to the slicing tomatos
 const largTomatoesObj = [
     {
@@ -420,18 +436,20 @@ const addToList = (id) => {
     cartItems.push(id)
 }
 
-const countList = () => {
+const countList = (array) => {
     const itemCount = {}
-    cartItems.forEach((x) => {
+    array.forEach((x) => {
     itemCount[x] = (itemCount[x] || 0) + 1
     })
-    console.log(itemCount)
+    // console.log(itemCount)
     return itemCount
 }
 
 
 const displayCart = () => {
-    obj = countList()
+    //here save the cart items and pass the value into the countList function
+    const cart = saveCart()
+    obj = countList(cart)
     listItemContainer.innerHTML = `
     <h1 class="title top-title">Items in cart</h1>
     `;
@@ -452,8 +470,6 @@ const displayCart = () => {
 const goToCart = () => {
     indexDiv.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
-
-    saveCart()
 
     if (listBtn.textContent === "Go to cart"){
         listBtn.innerText = "Go to plant index"
