@@ -7,12 +7,28 @@ const listBtn = document.getElementById("list-btn")
 const total = document.getElementById("tital")
 
 
-
 const largePlantsPrice = 3.50
 let cartItems = []
 
+const isCart = () => {
+    if(!localStorage.getItem("cartedItems")){
+        const jsonCart = JSON.stringify(cartItems)
+    }
+    return jsonCart
+}
 
 
+const saveCart = () => {
+
+    if (localStorage.getItem("carted-items")){
+        // if()
+        console.log(jsonCart)
+    } else {
+        const jsonCart = JSON.stringify(cartItems)
+        localStorage.setItem("carted-items", jsonCart)
+        console.log("made the cart data")
+    }
+}
 // rename this to the slicing tomatos
 const largTomatoesObj = [
     {
@@ -433,12 +449,11 @@ const displayCart = () => {
 }
 
 // you may need to wrap all the index things in one div to toggle them 
-const goToList = () => {
+const goToCart = () => {
     indexDiv.classList.toggle("hidden");
     listItemContainer.classList.toggle("hidden")
-    const jsonList = JSON.stringify(cartItems)
-    localStorage.setItem("carted-items", jsonList)
 
+    saveCart()
 
     if (listBtn.textContent === "Go to cart"){
         listBtn.innerText = "Go to plant index"
@@ -464,7 +479,7 @@ const main = () => {
 
 
 
-listBtn.addEventListener("click", goToList)
+listBtn.addEventListener("click", goToCart)
 
 main()
 
