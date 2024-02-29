@@ -27,6 +27,11 @@ const saveAndUpdateCart = () => {
     
 }
 
+const returnCartArr = () => {
+    saveAndUpdateCart()
+    return JSON.parse(localStorage.getItem("cart"))
+}
+
 
 
 
@@ -422,11 +427,11 @@ const addToList = (id) => {
 }
 
 const countList = () => {
+    let cart = returnCartArr()
+    console.log(`cart = ${cart}`)
     const itemCount = {}
-    cartItems.forEach((x) => {
-    itemCount[x] = (itemCount[x] || 0) + 1
-    })
-    // console.log(itemCount)
+    cart.forEach(item => itemCount[item] = (itemCount[item] || 0) + 1)
+    console.log(`item count = ${itemCount}`)
     return itemCount
 }
 
@@ -483,4 +488,4 @@ const main = () => {
 listBtn.addEventListener("click", goToCart)
 
 main()
-
+returnCartArr()
