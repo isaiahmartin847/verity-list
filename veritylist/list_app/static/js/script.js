@@ -11,8 +11,10 @@ const largePlantsPrice = 3.50
 let cartItems = []
 
 
+
+
 const saveAndUpdateCart = () => {
-    console.log("update cart")
+
     if(!localStorage.getItem("cart")){
         const cartStr = JSON.stringify(cartItems)
         localStorage.setItem("cart", cartStr)
@@ -428,10 +430,8 @@ const addToList = (id) => {
 
 const countList = () => {
     let cart = returnCartArr()
-    console.log(`cart = ${cart}`)
     const itemCount = {}
     cart.forEach(item => itemCount[item] = (itemCount[item] || 0) + 1)
-    console.log(`item count = ${itemCount}`)
     return itemCount
 }
 
@@ -473,7 +473,11 @@ const goToAbout = (url) => {
     window.open(url)
 }
 const removeAll = (key) => {
-    cartItems = cartItems.filter(item => item !== key)
+    let cart = JSON.parse(localStorage.getItem("cart"))
+    cart = cart.filter(item => item !== key)
+    cart = JSON.stringify(cart)
+    localStorage.setItem("cart", cart)
+
     displayCart()
 }
 
