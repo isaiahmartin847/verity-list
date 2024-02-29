@@ -8,26 +8,26 @@ const total = document.getElementById("tital")
 
 
 const largePlantsPrice = 3.50
-let cartItems = ["hello", "world"]
+let cartItems = []
 
 
 const saveAndUpdateCart = () => {
     console.log("update cart")
     if(!localStorage.getItem("cart")){
-        // creating the local storage data 
         const cartStr = JSON.stringify(cartItems)
         localStorage.setItem("cart", cartStr)
-        console.log("cart does not exist in our local data so i created one")
+        cartItems = []
     } else {
-        const cart = localStorage.getItem("cart")
-        const cartArr = JSON.parse(cart)
-        // cartArr.push("world")
+        const cartArr = JSON.parse(localStorage.getItem("cart"))
         cartItems.forEach(item => cartArr.push(item))
-        localStorage.setItem("cart", cartArr)
+        const cartArrStr = JSON.stringify(cartArr)
+        localStorage.setItem("cart", cartArrStr)
         cartItems = []
     }
     
 }
+
+
 
 
 // rename this to the slicing tomatos
@@ -434,6 +434,7 @@ const countList = () => {
 const displayCart = () => {
     //here save the cart items and pass the value into the countList function
     obj = countList()
+    saveAndUpdateCart()
     listItemContainer.innerHTML = `
     <h1 class="title top-title">Items in cart</h1>
     `;
@@ -475,7 +476,6 @@ const main = () => {
     listIndex(largTomatoesObj, largTomatoContainer)
     listIndex(smallTomatoesObj, smallTomatoContainer)
     listIndex(peppersObj, peppersContainer)
-    saveAndUpdateCart()
 }
 
 
@@ -483,4 +483,4 @@ const main = () => {
 listBtn.addEventListener("click", goToCart)
 
 main()
-console.log(cartItems)
+
