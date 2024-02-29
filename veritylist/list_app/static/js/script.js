@@ -1,6 +1,7 @@
 const largTomatoContainer = document.getElementById("larg-tomato-container")
 const smallTomatoContainer = document.getElementById("small-tomatoes")
 const peppersContainer = document.getElementById("peppers")
+const otherPlantsContiner = document.getElementById("other-garden-plants")
 const indexDiv = document.getElementById("index-div")
 const listItemContainer = document.getElementById("list-container")
 const listBtn = document.getElementById("list-btn")
@@ -8,6 +9,7 @@ const total = document.getElementById("tital")
 
 
 const largePlantsPrice = 3.50
+const smallPlantPrice = 2
 let cartItems = []
 
 
@@ -394,6 +396,137 @@ const peppersObj = [
 
 
 const otherGardenPlants = [
+    {
+        title: "Strawberry - Honeoye",
+        size: "NA",
+        potColor: "Blue",
+        daysToMaturity: "NA",
+        description: "Winter hardy with large berries.",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://noursefarms.com/product/honeoye/"
+    },
+    {
+        title: "Cucumber - General Lee Hybrid",
+        size: "NA",
+        potColor: "Red Pots",
+        daysToMaturity: 66,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.fedcoseeds.com/seeds/generally-cuke-slicing-cucumber-1328"
+    },
+    {
+        title: "Cucumber - Sassy F1",
+        size: "NA",
+        potColor: "Green Pots",
+        daysToMaturity: 52,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://fedcoseeds.com/seeds/sassy-pickling-cucumber-1218"
+    },
+    {
+        title: "Cucumber - Lemon",
+        size: "NA",
+        potColor: "Yellow",
+        daysToMaturity: 68,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.fedcoseeds.com/seeds/lemon-specialty-cucumber-1372"
+    },
+    {
+        title: "Yellow Squash - Saffron",
+        size: "NA",
+        potColor: "Blue",
+        daysToMaturity: 42,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.fedcoseeds.com/seeds/saffron-yellow-summer-squash-1504"
+    },
+    {
+        title: "Zucchini Squash - Black Zucchini",
+        size: "NA",
+        potColor: "Black",
+        daysToMaturity: 50,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.fedcoseeds.com/seeds/black-zucchini-1411"
+    },
+    {
+        title: "Tomatillo -  Purple Blush Tomatillo",
+        size: "NA",
+        potColor: "Red",
+        daysToMaturity: 75,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://fedcoseeds.com/seeds/purple-blush-organic-tomatillo-4012"
+    },
+    {
+        title: "Broccoli - Gypsy",
+        size: "NA",
+        potColor: "Lime Green",
+        daysToMaturity: 91,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://fedcoseeds.com/seeds/gypsy-broccoli-3315"
+    },
+    {
+        title: "Broccoli - Diplomat F1",
+        size: "NA",
+        potColor: "Orange",
+        daysToMaturity: 68,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        //find the real URl
+        url: "#"
+    },
+    {
+        title: "Cabbage - Kaitlin F1",
+        size: "NA",
+        potColor: "Black",
+        daysToMaturity: 94,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.johnnyseeds.com/vegetables/cabbage/storage-cabbage/kaitlin-f1-cabbage-seed-286.html#q=Kaitlin&lang=en_US&start=1"
+    },
+    {
+        title: "Cabbage - Tendersweet F1",
+        size: "NA",
+        potColor: "Red",
+        daysToMaturity: 71,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.johnnyseeds.com/vegetables/cabbage/fresh-market-cabbage/tendersweet-f1-cabbage-seed-2221.html"
+    },
+    {
+        title: "Cabbage - Omero",
+        size: "NA",
+        potColor: "Red",
+        daysToMaturity: 73,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "https://www.johnnyseeds.com/vegetables/cabbage/fresh-market-cabbage/omero-f1-cabbage-seed-3627.html"
+    },
+    {
+        title: "Cauliflower - Purple of Sicily",
+        size: "NA",
+        potColor: "Purple",
+        daysToMaturity: 74,
+        description: "NA",
+        price: smallPlantPrice,
+        id: 23,
+        url: "#"
+    }
 
 ]
 
@@ -411,7 +544,7 @@ listIndex = (obj, containerName) => {
                     <li class="list-items">Fruit size: ${item.size}oz</li>
                     <li class="list-items">Pot Color: ${item.potColor}</li>
                     <li class="list-items">Days to maturity: ${item.daysToMaturity} days</li>
-                    <li class="list-items">Price: $${item.price}0</li>
+                    <li class="list-items">Price: $${item.price}</li>
                 </ul>
                 <button class="add-to-cart-btn" id="T-${item.id}" onclick="addToList('${item.title}')">Add to cart</button>
                 <button class="about-btn" onclick="goToAbout('${item.url}')" type="button">About</button>
@@ -448,6 +581,7 @@ const displayCart = () => {
             <div class="item-div">
                 <h2 class="list-name">Name: ${key}</h2>
                 <h3 class="list-count">Count: ${value}</h3>
+                <button class="list-remove-btn" onclick="removeOne('${key}')">remove one</button>
                 <button class="list-remove-btn" onclick="removeAll('${key}')">remove all</button>
             </div>
         `
@@ -481,10 +615,25 @@ const removeAll = (key) => {
     displayCart()
 }
 
+const removeOne = (key) => {
+    let cart = JSON.parse(localStorage.getItem("cart"))
+
+
+    let index = cart.indexOf(key);
+    if (index !== -1) {
+        cart.splice(index, 1);
+    }
+    cart = JSON.stringify(cart)
+    localStorage.setItem("cart", cart)
+    displayCart()
+}
+
+
 const main = () => {
     listIndex(largTomatoesObj, largTomatoContainer)
     listIndex(smallTomatoesObj, smallTomatoContainer)
     listIndex(peppersObj, peppersContainer)
+    listIndex(otherGardenPlants, otherPlantsContiner)
 }
 
 
